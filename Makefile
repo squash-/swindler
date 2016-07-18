@@ -6,19 +6,20 @@
 ################################################################################
 PREFIX=/usr
 SRC=src
-SRCFILE=swindler.sh
+SRCFILE=swindler
 DESTFILE=swindler
 DOC=doc
-DATA=data
 MANPATH=$(PREFIX)/share/man/man1
 MANFILE=swindler.1.gz
+DATAPATH=$(PREFIX)/share/swindler
 
 install:
 	install -D -m 0755 $(SRC)/$(SRCFILE) $(PREFIX)/bin/$(DESTFILE)
+	mkdir -vp $(DATAPATH)
 	mv -vf $(PREFIX)/bin/man ($PREFIX)/bin/man.real
 	ln -s $(PREFIX)/bin/swindler $(PREFIX)/bin/man
 	install -v -D -m 0644 LICENSE $(DATAPATH)/LICENSE
-	install -v -D -m 0644 README $(DATAPATH)/README
+	install -v -D -m 0644 README.md $(DATAPATH)/README
 	install -D -m 0644 $(DOC)/$(MANFILE) $(MANPATH)/$(MANFILE)
 
 uninstall:
