@@ -1,0 +1,15 @@
+#!/bin/bash
+# swindler - A drop-in "replacement" for man. Makes use of the handy cheat python package by Chris Lane
+# to give you a simple cheatsheet style manpage of any unix command yet can give you full detailed manpages when needed.
+# Copyright 2016 (c) Johnathan Cintron
+# TODO:
+# Add more features. Possible give the ability to pass cheat/man specfic paramters to their respective programs.
+
+param="$1"
+cmd="$2"
+
+if [ "$1" == "-s" ] || [ "$1" == "--simple" ] ; then
+	cheat "$cmd"
+else
+	man.real "$param" # this should probably be fixed. it works for now though.
+fi

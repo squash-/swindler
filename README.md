@@ -1,5 +1,8 @@
+#Swindler
+
+
 ##TODO:
 * ~~Everything.~~
 * ~~Create man page for swindler~~
-* Actually create swindler
+* ~~Actually create swindler~~
 * Everything else.
