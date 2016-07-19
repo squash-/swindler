@@ -16,7 +16,7 @@ DATAPATH=$(PREFIX)/share/swindler
 install:
 	install -D -m 0755 $(SRC)/$(SRCFILE) $(PREFIX)/bin/$(DESTFILE)
 	mkdir -vp $(DATAPATH)
-	mv -vf $(PREFIX)/bin/man ($PREFIX)/bin/man.real
+	mv -vf $(PREFIX)/bin/man $(PREFIX)/bin/man.real
 	ln -s $(PREFIX)/bin/swindler $(PREFIX)/bin/man
 	install -v -D -m 0644 LICENSE $(DATAPATH)/LICENSE
 	install -v -D -m 0644 README.md $(DATAPATH)/README
